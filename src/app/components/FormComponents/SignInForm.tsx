@@ -1,31 +1,27 @@
 "use client"; // this is a client component
 import React from "react";
 import Image from "next/image";
-import sign from "../../assets/SignIn.png";
 import { useForm } from "react-hook-form";
-import { useEffect, useState } from "react";
-// import Router from "next/router";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import axios from "axios";
+import sign from "../../assets/SignIn.png";
+
+//   {
+//     "email": "eve.holt@reqres.in",
+//     "password": "cityslicka"
+// }
 
 export const SignInForm = () => {
-  //   {
-  //     "email": "eve.holt@reqres.in",
-  //     "password": "cityslicka"
-  // }
   const router = useRouter();
 
   const onSubmit = async (data: any) => {
     try {
-      // event?.preventDefault();
       const response = await axios.post("https://reqres.in/api/login", {
         email: data.email,
         password: data.password,
       });
-      console.log(response);
-      event?.preventDefault();
-      // router.push("/Dashboard");
+      console.log(response.data);
+      router.push("/Dashboard");
     } catch (error) {
       console.error(error);
     }
@@ -36,8 +32,6 @@ export const SignInForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-
-  console.log(errors, "errors");
 
   return (
     <div className="align-center h-full w-full">
@@ -50,14 +44,12 @@ export const SignInForm = () => {
           <p className="text-black font-light text-xl">
             Enter your email and password to Login
           </p>
-          {/* <form onSubmit={handleSubmit(onSubmit)}> */}
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="mt-5 flex flex-col items-start ">
               <p className="text-black font-bold text-base ">Email Address</p>
               <input
                 type="email"
                 className="h-8 w-64 rounded bg-gray-200 border-2 border-slate-300"
-                // value={email}
                 {...register("email", {
                   required: "email is required",
                   pattern: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i,
@@ -98,14 +90,12 @@ export const SignInForm = () => {
             </div>
 
             <div className="flex flex-col items-start mt-5">
-              {/* <Link href="http://localhost:3000/Dashboard" passHref={true}> */}
               <button
                 type="submit"
                 className="bg-sky-700 rounded text-white w-32 h-8"
               >
                 Sign In
               </button>
-              {/* </Link> */}
             </div>
           </form>
         </div>
