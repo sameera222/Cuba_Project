@@ -11,6 +11,7 @@ import { BsHexagon } from "react-icons/bs";
 import { TbBoxModel2 } from "react-icons/tb";
 import { RiListCheck } from "react-icons/ri";
 import { FaGripLinesVertical } from "react-icons/fa";
+import Link from "next/link";
 
 const SideBar = () => {
   return (
@@ -31,31 +32,36 @@ const SideBar = () => {
         <span className="mr-3">
           <MdCable />
         </span>
-        Invite Code
+
+        <Link href="/InviteCode">Invite Codes</Link>
       </div>
       <div className="flex flex-row mr-5 py-2">
         <span className="mr-3">
           <AiOutlineClockCircle />
         </span>
-        Waiting Lists
+
+        <Link href="/WaitingLists">Waiting Lists</Link>
       </div>
       <div className="flex flex-row mr-5 py-2">
         <span className="mr-3">
           <HiUsers />
         </span>
-        Users
+
+        <Link href="/Users">Users</Link>
       </div>
       <div className="flex flex-row mr-5 py-2">
         <span className="mr-3">
           <RiShoppingBasketLine />
         </span>
-        Platforms
+
+        <Link href="/Platform">Platform</Link>
       </div>
       <div className="flex flex-row mr-5 py-2">
         <span className="mr-3">
           <SlScreenDesktop />
         </span>
-        Boarding Screens
+
+        <Link href="/BoardingScreens">Boarding Screens</Link>
       </div>
       <div className="flex flex-row mr-5 py-2">
         <span className="mr-3">
@@ -67,7 +73,8 @@ const SideBar = () => {
         <span className="mr-3">
           <BsHexagon />
         </span>
-        Retailers
+
+        <Link href="/Retailers">Retailers</Link>
       </div>
       <div className="flex flex-row mr-5 py-2">
         {" "}

@@ -1,11 +1,12 @@
 import SideBar from "@/app/components/FormComponents/SideBar";
 import React from "react";
 import { CgTikcode } from "react-icons/cg";
+import { Navbar } from "@/app/components/FormComponents/Navbar";
 
 const Dashboard = () => {
   return (
     <div>
-      <div className="flex md:flex md:flex-grow flex-row justify-between items-center bg-white w-full h-16 p-5">
+      {/* <div className="flex md:flex md:flex-grow flex-row justify-between items-center bg-white w-full h-16 p-5">
         <div className="text-black font-bold text-2xl mr-5 flex flex-row">
           Cuba
           <span className="ml-60">
@@ -14,7 +15,8 @@ const Dashboard = () => {
         </div>
 
         <div className="text-black font-bold text-2xl">Admin</div>
-      </div>
+      </div> */}
+      <Navbar />
       <div className="flex flex-row w-full h-full">
         <div className="flex flex-col items-start bg-white w-72 h-full">
           <SideBar />
